@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./stylesheets/style.css">
+
+    <title>Document</title>
+</head>
+<body>
+ <div class="flex-container">
+
+    <section class="welcome-section">
+        <div class="welcome-text"> </div>
+            <div class="primary-text entered-name"></div>
+            <div class="given-name">
+                <input type="text" id="name-input" placeholder="Who's there?">
+                <button class="go-button">GO</button>
+            </div>
+            <div class="primary-text  question-text"></div>
+             
+    </section>
+
+   <section class="activity-options">
+        <button class="option-button find-a-recipe">Find A Recipe</button>
+         
+        <form id="search-form">
+            <strong>What Do you Want to Use?</strong> <br>
+            <label>Ingredient One: </label>
+            <input type="text" id="item1"><br>
+            <label>Ingredient Two: </label>
+            <input type="text" id="item2"><br>
+            <label>Ingredient Three: </label>
+            <input type="text" id="item3"><br>
+           </form>
+           <button id="search-recipe">Search</button>
+
+        <div class="recipe-options">
+            <div class="grid-container">
+                <button class="recipeBtn option1"></button>
+                <button class="recipeBtn option2"></button>
+                <button class="recipeBtn option3"></button>
+        </div>
+        
+
+        <div class="results-section">
+            <div class="results-flex-container">
+                <!-- <div class="result-title"></div>
+                <div class="result-img"></div>
+                <div class="result-ingredients"></div>
+                <div class="result-method"></div> -->
+            </div>
+        </div>
+       
+
+     
+         
+
+           
+            
+        <!-- </div>
+        <button class="option-button check-weather">Check the weather</button>
+        <button class="option-button random-activity">Random activity</button>
+         -->
+   </section>
+   
+</div>
+
+</body>
+
+    <script src="./javascripts/main.js"></script>
+</body>
+</html>
