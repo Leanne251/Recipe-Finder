@@ -64,20 +64,21 @@ body {
 
 }
 
-.option-button{
+.button{
     
-    padding: 25px;
-    margin: 10px;
+    padding: 10px;
+    margin: 20px;
     width: 500px;
+    border-radius: 10px;
     background-color: var(--button-color);
-    border: 0.1px solid rgba(0, 0, 0, 0.75);
+    border:none;
     box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.25);
     font-family: var(--button-font);
     font-size: var(--button-font-size);
 
 }
 
-.option-button:hover{
+.button:hover{
     background-color: var(--button-color-hover);
 }
 
@@ -115,16 +116,6 @@ input{
     
 }
 
-#search-recipe{
-    background-color:rgba(136, 245, 203, 0.75);
-    font-family: var(--primary-font);
-    font-size: 1em;
-    padding: 10px;
-    margin: 15px;
-    border: none;
-    border-radius: 20px;
-
-}
 
 /* .recipe-options{
     display: none; 
@@ -143,9 +134,6 @@ input{
     font-size: var(--button-font-size);
 }
 
-.grid{
-    display: grid;
-}
 
 .results-flex-container{
     display: flex;
@@ -156,3 +144,6 @@ input{
     align-content: center;
 }
 
+.search-again{
+    display: none;
+}

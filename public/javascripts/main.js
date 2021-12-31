@@ -1,6 +1,31 @@
+const goButton = document.querySelector('.go-button');
+const welcomeText = document.querySelector('.welcome-text');
+const enteredName = document.querySelector('.entered-name');
+const questionText = document.querySelector('.question-text');
+const nameField = document.querySelector('.given-name');
+
+
+goButton.addEventListener("click", changeText);
+
+function changeText (){
+
+    const inputField = document.querySelector('input').value;
+    
+    nameField.style.display = "none";
+    welcomeText.innerText = "Welcome"
+    enteredName.innerText = inputField.toUpperCase();
+    questionText.innerText = `What would you like to do today? `
+    
+
+}
+
+
 const recipeForm = document.querySelector('#search-form');
 const searchRecipe = document.querySelector('#search-recipe');
 const recipeOptions = document.querySelector('.recipe-options')
+const searchAgain = document.querySelector('.search-again')
+const resultsContainer = document.querySelector('.results-flex-container')
+
 
 const findARecipe = document.querySelector('.find-a-recipe');
 findARecipe.addEventListener("click", searchIngredients)
@@ -35,6 +60,7 @@ async function getRecipeOptions (){
         data.forEach((element, index) => {
 
             const recipeButton = document.createElement('button') 
+            recipeButton.setAttribute("class", "button")
            //  recipeButton.setAttribute("style", "background: blue; border: 1px solid black")
             recipeButton.innerText = element.title
             console.log("element.title", element.title )
@@ -80,10 +106,10 @@ async function accessApi(event, recipeId){
     })
     
     const ingredientsDiv = document.createElement('div')
-    ingredientsDiv.innerText = "What to Buy: \n" + ingredients + "\n";
+    ingredientsDiv.innerText = "What to Buy: \n" + ingredients;
 
     const method = document.createElement('div')
-    method.innerHTML = `How To Cook \n ${recipeData.instructions}`
+    method.innerHTML = `\n How To Cook: \n ${recipeData.instructions} \n`
 
     const resultsContainer = document.querySelector('.results-flex-container')
 
@@ -95,13 +121,22 @@ async function accessApi(event, recipeId){
     image.setAttribute("width", "300px")
     image.setAttribute("height", "300px")
     resultsContainer.appendChild(image)
-    // resultsContainer.innerText = "What To Buy: \n"
     resultsContainer.appendChild(ingredientsDiv)
-    // resultsContainer.innerText = "How To Cook: \n"
     resultsContainer.appendChild(method)
+    
     recipeOptions.style.display = "none";
+    searchAgain.style.display = "block";
 
 }
+    searchAgain.addEventListener("click", reStartSearch)
+    
+    function reStartSearch(){
+        resultsContainer.style.display = "none";
+        recipeForm.style.display = "block";
+        searchRecipe.style.display = "block";
 
+
+
+    }
 
 }
