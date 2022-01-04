@@ -1,0 +1,7 @@
+{
+    "editor.defaultFormatter": "remimarsal.prettier-now",
+    "editor.formatOnSave": true,
+    "[javascript]": {
+        "editor.defaultFormatter": "remimarsal.prettier-now"
+    }
+}

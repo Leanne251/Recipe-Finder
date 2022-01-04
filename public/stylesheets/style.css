@@ -10,7 +10,6 @@
 --button-font-size: 1.5em;
 --button-color: #B2F1FF;
 --button-color-hover: #D0F3FB
-/* --secondary color: */
 
 }
 
@@ -29,17 +28,14 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-items: center;
-    align-content: center;
-    justify-content: center;
     padding: 40px;
     
 }
 
 .welcome-section{
-    display: flex;
-    flex-direction: column;
-}
+    padding: 20px;
+    border-radius: 10px;
+} 
 
 #name-input{
     padding: 10px;
@@ -49,6 +45,7 @@ body {
     border: none;
     border-bottom: 1px solid grey;
     outline: none;
+    
 
 }
 
@@ -61,22 +58,26 @@ body {
     display: flex;
     flex-direction: column;
     margin: 50px;
+    justify-content: center;
 
 }
 
 .button{
     
     padding: 10px;
-    margin: 20px;
-    width: 500px;
+    margin: 10px;
+    width: 400px;
     border-radius: 10px;
     background-color: var(--button-color);
-    border:none;
+    border: none;
     box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.25);
     font-family: var(--button-font);
     font-size: var(--button-font-size);
+    justify-self: center;
+    align-self: center;
 
 }
+
 
 .button:hover{
     background-color: var(--button-color-hover);
@@ -102,7 +103,7 @@ body {
 #search-form, 
 #search-recipe {
     display: none;
-    text-align: center;
+    /* text-align: center; */
     
 }
 
@@ -117,10 +118,6 @@ input{
 }
 
 
-/* .recipe-options{
-    display: none; 
-    
-} */
 
 .recipeBtn{
     
@@ -137,7 +134,7 @@ input{
 
 .results-flex-container{
     display: flex;
-    flex-direction: column;
+    flex-flow: column wrap;
     justify-items: center;
     align-items: center;
     justify-content: center;
@@ -146,4 +143,7 @@ input{
 
 .search-again{
     display: none;
+    
 }
+
+
