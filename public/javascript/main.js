@@ -53,16 +53,17 @@ async function getRecipeOptions() {
 	);
 	console.log(response);
 	const data = await response.json(); // array of data
-	console.log(data);
+	console.log('data', data);
 
 	recipeForm.style.display = 'none';
 	searchRecipe.style.display = 'none';
 
 	const recipeId = {};
-	const recipeArray = [];
+	recipeArray = [];
 
 	data.forEach((element) => {
 		const recipeButton = document.createElement('button');
+		console.log('recipe button,', recipeButton);
 		recipeButton.setAttribute('class', 'button');
 		recipeButton.innerText = element.title;
 		recipeOptions.appendChild(recipeButton);
@@ -71,13 +72,15 @@ async function getRecipeOptions() {
 
 		// console.log("element.title", element.title )
 		// console.log("element id", element.id )
-		// console.log("recipe ID Object", recipeId)
-		// console.log("recipeArray ID's", recipeArray)
+		console.log('recipe ID Object', recipeId);
+		console.log("recipeArray ID's", recipeArray);
 	});
 
 	searchRecipe.addEventListener('click', getRecipeOptions);
 
-	const getRecipeInfo = (event) => accessApi(event, recipeId);
+	const getRecipeInfo = (event) => {
+		accessApi(event, recipeId);
+	};
 
 	recipeOptions.addEventListener('click', getRecipeInfo);
 
@@ -123,10 +126,12 @@ async function getRecipeOptions() {
 		resultsContainer.appendChild(image);
 		resultsContainer.appendChild(ingredientsDiv);
 		resultsContainer.appendChild(newLine);
-
 		resultsContainer.appendChild(method);
 
-		recipeOptions.style.display = 'none';
+		recipeOptions.innerHTML = '';
+
+		recipeArray = [];
+		recipeId = {}; // also need to empty the array or what not, so that the buttons can be refilled.
 		searchAgain.style.display = 'block';
 	}
 }
@@ -134,10 +139,14 @@ async function getRecipeOptions() {
 searchAgain.addEventListener('click', reStartSearch);
 
 function reStartSearch() {
-	resultsContainer.style.display = 'none';
+	resultsContainer.innerHTML = '';
 	recipeForm.style.display = 'block';
 	searchRecipe.style.display = 'block';
 	item1.value = '';
 	item2.value = '';
 	item3.value = '';
 }
+
+searchAgain.addEventListener('click', () => {
+	searchAgain.style.display = 'none';
+});
